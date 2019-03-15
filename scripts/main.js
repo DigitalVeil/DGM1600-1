@@ -1,5 +1,5 @@
 import { films } from '../data/films.js'
-import { people } from '../people.js'
+import { people } from '../data/people.js'
 
 const intro = document.querySelector(".intro")
 
@@ -20,6 +20,3 @@ crawlElement.textContent = film.opening_crawl
 intro.appendChild(tile)
 })
 
-const women = people.filter(person => person.gender === "female");
-
-console.log(women)
