@@ -4,8 +4,13 @@
     flex-wrap: wrap; 
 }
 
+body{
+    background: black;
+}
+
 .box {
     width: 200px; 
     margin: 10px; 
     text-align: center; 
 }
+

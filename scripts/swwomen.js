@@ -18,14 +18,13 @@ const allHomeWorlds = people.map(person => {
     let foundWorld = planets.find( planet => {
         return planet.url === person.homeworld 
     })
-    
+    let women = people.filter(person => person.gender === "female")
     let imageURL = getLastNumber(person.url)
     return {
         name: person.name,
         home: foundWorld.name,
         imagePath: `https://starwars-visualguide.com/assets/img/characters/${imageURL}.jpg`
-    }
-    
+    } 
 })
 
 
@@ -34,7 +33,7 @@ const allHomeWorlds = people.map(person => {
 const mainContainer = document.querySelector('.container')
 mainContainer.className = 'container'
 
-allHomeWorlds.forEach( person => {
+allHomeWorlds.filter( person => {
    // <div class ="box"></div>
     let personElement = document.createElement('div')
     let planetElement = document.createElement('p')

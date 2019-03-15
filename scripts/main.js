@@ -1,5 +1,5 @@
 import { films } from '../data/films.js'
-import { people } from '../data/people.js'
+import { people } from '../people.js'
 
 const intro = document.querySelector(".intro")
 
