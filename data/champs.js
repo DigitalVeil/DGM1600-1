@@ -81,7 +81,7 @@ export const champs = [
         "name": "Nunu",
         "url": "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nunu_0.jpg",
         "difficulty": 4,
-        "title": "the Boy and His Yeti"
+        "title": "The Boy and His Yeti"
     },
     {
         "name": "Ornn",
