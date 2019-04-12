@@ -1,3 +1,9 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 .container {
     display: flex;
@@ -5,30 +11,57 @@
     justify-content: space-around;
 }
 
-.box {
-    margin: 8px;
-    width: 204px;
-    height: 430px;
+.header{
+    height:50px;
+    background:#0a1827;
+    border:1px solid #CCC;
+    color: white;
+    font-size: 1.5em;
+    font-style: oblique;
+    width:960px;
+    margin:0px auto;
     text-align: center;
-}
-
-body { font-family: sans-serif; }
-
-.scene {
-  width: 200px;
-  height: 260px;
-  border: 1px solid #CCC;
-  margin: 40px 0;
-  perspective: 600px;
+    justify-content: center;
+    padding-top: 5px;
 }
 
 .card {
-  width: 100%;
+    text-align: center;
+    width: 100%;
   height: 100%;
   transition: transform 1s;
   transform-style: preserve-3d;
   cursor: pointer;
   position: relative;
+  color: white;
+}
+
+.box {
+  text-align: center;
+  width: 204px;
+  height: 430px;
+transition: transform 1s;
+transform-style: preserve-3d;
+cursor: pointer;
+position: relative;
+border: 1px solid #CCC;
+margin: 40px 0;
+perspective: 600px;
+
+}
+
+
+body { 
+  font-family: sans-serif; 
+  
+}
+
+.scene {
+  width: 204px;
+  height: 430px;
+  border: 1px solid #CCC;
+  margin: 40px 0;
+  perspective: 600px;
 }
 
 .card.is-flipped {
@@ -39,23 +72,66 @@ body { font-family: sans-serif; }
   position: absolute;
   width: 100%;
   height: 100%;
-  line-height: 260px;
-  color: white;
   text-align: center;
-  font-weight: bold;
-  font-size: 40px;
   backface-visibility: hidden;
-}
-
-.card__face--front {
-  background: red;
+  background-color: #0a1827
 }
 
 .card__face--back {
-  background: blue;
   transform: rotateY(180deg);
 }
 
-button{
+figure {
+  margin: 0px;
+  padding: 8px;
+}
+
+.button{
   width: 300px;  
+  color: #0a1827;
+  align-items: center;
+}
+
+
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.fullscreen-bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+    background: url('../jpg/c-o-animated-esports-season2016.webm') center center / cover no-repeat;
+  }
+
+  .fullscreen-bg__video {
+    display: none;
+  }
 }
